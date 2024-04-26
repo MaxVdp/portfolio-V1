@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 3
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #050505;
+  color: #FAF8FF;
+}
+
+section{
+  background-color: #050505;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**************
+Cusor Toggle
+**************/
+.inactive{
+  display: none;
+}
+
+
+.cursorToggle{
+  background-color: #FAF8FF;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.cursorToggle > svg {
+  fill: #050505;
+  stroke: #050505;
+  stroke-width: 0.7;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#blurredC svg {
+  fill: #050505;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+#ringC svg {
+  stroke: #050505;
+  stroke-width: 3;
+  width: 2rem;
+  height: 2rem;
+}
+
+
+.cursorToggle:hover{
+  transform: scale(1.15);
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transition: 0.5s;
+  
+}
+
+.cursorOption {
+  width: 50px;
+  height: 50px;
+  background-color: #FAF8FF;
+  margin-top: 1rem;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.cursorOption:hover{
+  transform: scale(1.15);
+}
+
+
+.cursorToggle:hover .dropdown,
+.cursorToggle:focus-within .dropdown {
+  display: flex;
+}
+
+/**************
+Blob animation
+**************/
+
+#blob{
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  border-radius: 50%;
+  animation: blobRotate 20s infinite;
+  background: linear-gradient(
+    to right,
+    #ff105f,
+    #ffad06);
+  z-index: 1;
+}
+
+#blur{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  backdrop-filter: blur(150px);
+  z-index: 2;
+}
+
+@keyframes blobRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1, 1.5);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/**************
+Ring Animation
+**************/
+
+#ring{
+  height: 125px;
+  width: 125px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  border-radius: 50%;
+  animation: ringRotate 10s infinite;
+  background: linear-gradient(
+    to right,
+    #ff105f,
+    #ffad06);
+  z-index: 1;
+}
+
+#ring::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 85%;
+  width: 85%;
+  border-radius: 50%;
+  background: #050505;
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+/**************
+Conent styles
+**************/
+
+h1{
+  color: #FAF8FF;
+  font-size: 7.5rem;
+  font-family: "Space Mono", monospace;
+  display: inline-block;
+  margin: 3rem;
+  cursor: default;
+  transition: 0.5s;
+}
+
+h1:hover{
+  transform: scale(1.1);
+}
+
+h2{
+  font-size: 2rem;
+  font-family: "Space Mono", monospace;
+  display: inline-block;
+  margin: 3rem;
+  cursor: default;
+  transition: 0.5s;
+}
+
+
