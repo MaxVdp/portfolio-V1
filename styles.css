@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  z-index: 3
+  z-index: 3;
 }
 
 body {
@@ -212,16 +212,18 @@ nav{
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  z-index: 4;
 }
 
 nav > a {
   color: #FAF8FF;
   text-decoration: none;
-  padding: 0 4rem;
+  padding: 10px 4rem;
   font-size: 1.4rem;
   position: relative;
   display: flex;
   justify-content: center;
+  text-shadow: -1px -1px 0 #050505, 1px -1px 0 #050505, -1px 1px 0 #050505, 1px 1px 0 #050505;
 }
 
 nav > a:hover{
@@ -235,7 +237,7 @@ nav > a:hover{
 nav > a::before {
   content: "";
   position: absolute;
-  top: 65px;
+  top: 75px;
   left: 0;
   right: 0;
   margin: auto;
@@ -245,6 +247,7 @@ nav > a::before {
   background: #FAF8FF;
   transform: scaleX(0);
   transition: transform 0.1s;
+  box-shadow: -1px -1px 0 #050505, 1px -1px 0 #050505, -1px 1px 0 #050505, 1px 1px 0 #050505;
 }
 
 .nav-hide > a::before {
