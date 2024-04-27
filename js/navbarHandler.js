@@ -12,3 +12,16 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+
+
+document.querySelector('#aboutmeLink').addEventListener('click', (event) => {
+  event.preventDefault();
+  let aboutme = document.querySelector('#aboutme');
+  window.scroll({
+    top: aboutme.offsetTop - (window.innerHeight / 2) + (aboutme.offsetHeight / 2),
+    behavior: 'smooth'
+  });
+});
+
+
+

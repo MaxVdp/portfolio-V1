@@ -13,9 +13,9 @@
     <div id="ring" class="inactive"></div>
 
     <nav>
-        <a href="">About me</a>
-        <a href="">Projects</a>
-        <a href="">Links</a>
+        <a id="aboutmeLink">About me</a>
+        <a id="projectsLink">Projects</a>
+        <a id="linksLink">Links</a>
     </nav>
 
     <div class="cursorToggle">
@@ -23,12 +23,12 @@
             <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
         </svg>
         <div class="dropdown">
-            <div data-title="Blurred Cursor Tracker" id="blurredC" class="cursorOption">
+            <div data-title="Blurred Cursor Trailer" id="blurredC" class="cursorOption">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-fog2-fill" viewBox="0 0 16 16">
                     <path d="M8.5 3a5 5 0 0 1 4.905 4.027A3 3 0 0 1 13 13h-1.5a.5.5 0 0 0 0-1H1.05a3.5 3.5 0 0 1-.713-1H9.5a.5.5 0 0 0 0-1H.035a3.5 3.5 0 0 1 0-1H7.5a.5.5 0 0 0 0-1H.337a3.5 3.5 0 0 1 3.57-1.977A5 5 0 0 1 8.5 3"/>
                   </svg>
             </div>
-            <div data-title="Ring Cursor Tracker" id="ringC" class="cursorOption">
+            <div data-title="Ring Cursor Trailer" id="ringC" class="cursorOption">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" fill="currentColor" />
                 </svg>
             </div>
@@ -38,9 +38,8 @@
 
     
     <!-- TODO 
-        - About me section
         - Projects section
-        - Links to github, linkedin and option for english or dutch cv 
+        - Links to github, codepen, linkedin and option for english or dutch cv 
     -->
 
 
@@ -48,11 +47,19 @@
         <h1 data-value="Max Vandeput">Max Vandeput</h1>
     </section>
 
+    <div id="aboutme">
+        <p>
+            As a software developer, I am <span>passionate</span> about building <span>high-quality software</span> that solves user needs. I am always looking for ways to <span>expand and improve my skills and knowledge</span> so that I can continue to do my job in the best possible way. I am currently studying for a Bachelor's degree in Applied Informatics at UCLL.
+        </p>
+        <p>
+            I have experience with a <span>variety of programming languages and technologies</span>, including <span>Java</span>, <span>Python</span>, <span>JavaScript</span>, <span>HTML</span>, <span>CSS</span>, <span>Gleam</span> and <span>SQL</span>. I have also used frameworks and libraries such as <span>React</span>, <span>Node.js</span>, and <span>Express</span> for school projects.
+        </p>
+        <p>
+            When I am not studying or working on personal projects, you can find me doing <span>calisthenics</span>, <span>bouldering</span>, <span>playing the guitar</span>, or <span>running around the table with my dog</span>.
+        </p>
+    </div>
     <section>
-        <h2 data-value="Front-End Developer">About me</h2>
-    </section>
-    <section>
-        <h2 data-value="Front-End Developer">Projects</h2>
+        <h2>Projects</h2>
     </section>
     <script src="js/animateText.js"></script>
     <script src="js/cursorHandler.js"></script>

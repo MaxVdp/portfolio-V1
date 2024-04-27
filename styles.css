@@ -2,16 +2,26 @@
   margin: 0;
   padding: 0;
   z-index: 3;
+
+  --bg-dark-color: #050505;
+  --text-100-color: #FAF8FF;
+  --text-80-color: #C9C7CD;
+  --red-color: #ff105f;
+  --yellow-color: #ffad06;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #050505;
-  color: #FAF8FF;
+  background-color: var(--bg-dark-color);
+  color: var(--text-100-color);
 }
 
 section{
-  background-color: #050505;
+  background-color: var(--bg-dark-color);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -28,7 +38,7 @@ Cusor Toggle
 }
 
 .cursorToggle{
-  background-color: #FAF8FF;
+  background-color: var(--text-100-color);
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -40,6 +50,7 @@ Cusor Toggle
   align-items: center;
   transition: 0.5s;
   cursor: pointer;
+  z-index: 5;
 }
 [data-title]:hover::after{
   opacity: 1;
@@ -58,8 +69,8 @@ Cusor Toggle
 
 
 .cursorToggle > svg {
-  fill: #050505;
-  stroke: #050505;
+  fill: var(--bg-dark-color);
+  stroke: var(--bg-dark-color);
   stroke-width: 0.7;
   width: 1.5rem;
   height: 1.5rem;
@@ -83,7 +94,7 @@ Cusor Toggle
 .cursorOption {
   width: 50px;
   height: 50px;
-  background-color: #FAF8FF;
+  background-color: var(--text-100-color);
   margin-top: 1rem;
   border-radius: 30%;
   display: flex;
@@ -104,7 +115,7 @@ Cusor Toggle
 }
 
 #blurredC svg {
-  fill: #050505;
+  fill: var(--bg-dark-color);
   width: 1.8rem;
   height: 1.8rem;
 }
@@ -129,11 +140,11 @@ Blob animation
   left: 50%;
   transform: translate(-50%, -50%); 
   border-radius: 50%;
-  animation: blobRotate 20s infinite;
+  animation: blobRotate 15s infinite;
   background: linear-gradient(
     to right,
-    #ff105f,
-    #ffad06);
+    var(--red-color),
+    var(--yellow-color));
   z-index: 1;
 }
 
@@ -141,7 +152,7 @@ Blob animation
   height: 100%;
   width: 100%;
   position: fixed;
-  backdrop-filter: blur(150px);
+  backdrop-filter: blur(200px);
   z-index: 2;
 }
 
@@ -172,8 +183,8 @@ Ring Animation
   animation: ringRotate 10s infinite;
   background: linear-gradient(
     to right,
-    #ff105f,
-    #ffad06);
+    var(--red-color),
+    var(--yellow-color));
   z-index: 1;
 }
 
@@ -186,7 +197,7 @@ Ring Animation
   height: 82%;
   width: 82%;
   border-radius: 50%;
-  background: #050505;
+  background: var(--bg-dark-color);
 }
 
 @keyframes ringRotate {
@@ -216,7 +227,7 @@ nav{
 }
 
 nav > a {
-  color: #FAF8FF;
+  color: var(--text-100-color);
   text-decoration: none;
   padding: 10px 4rem;
   font-size: 1.4rem;
@@ -224,10 +235,15 @@ nav > a {
   display: flex;
   justify-content: center;
   text-shadow: -1px -1px 0 #050505, 1px -1px 0 #050505, -1px 1px 0 #050505, 1px 1px 0 #050505;
+  cursor: pointer;
 }
 
 nav > a:hover{
   transform: scale(1.15);
+}
+
+.nav-hide > a:hover{
+  transform: scale(1);
 }
 
 .nav-hide{
@@ -241,25 +257,27 @@ nav > a::before {
   left: 0;
   right: 0;
   margin: auto;
-  width: 100px;
-  height: 5px;
+  width: 115px;
+  height: 7px;
   border-radius: 50px;
-  background: #FAF8FF;
+  background: var(--text-100-color);
   transform: scaleX(0);
   transition: transform 0.1s;
   box-shadow: -1px -1px 0 #050505, 1px -1px 0 #050505, -1px 1px 0 #050505, 1px 1px 0 #050505;
 }
 
+
 .nav-hide > a::before {
   transform: scaleX(1);
 }
+
 
 /**************
 Content styles
 **************/
 
 h1{
-  color: #FAF8FF;
+  color: var(--text-100-color);
   font-size: 7.5rem;
   font-family: "Space Mono", monospace;
   display: inline-block;
@@ -268,26 +286,30 @@ h1{
 }
 
 h1:hover{
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
-#fsd{
-  color: #FAF8FF;
-  font-size: 6rem;
-  font-family: "Space Mono", monospace;
-  margin-top: 1rem;
-  display: inline-block;
-  cursor: default;
-  transition: 0.5s;
+#aboutme{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
-h2{
-  font-size: 2rem;
-  font-family: "Space Mono", monospace;
-  display: inline-block;
-  margin: 3rem;
-  cursor: default;
-  transition: 0.5s;
+#aboutme > p{
+  width: 75%;
+  color: var(--text-80-color);
+  font-size: 1.3rem;
+}
+#aboutme > p > span{
+  color: var(--text-100-color);
+  font-weight: bold;
+  margin: 0 1px;
 }
 
+p{
+  position: relative;
+}
 
