@@ -1,22 +1,22 @@
 const blur = document.getElementById('blur'); 
 const blob = document.getElementById('blob');
-const ring = document.getElementById('ring');
+/* const ring = document.getElementById('ring'); */
 
-document.getElementById('blurredC').onclick = event => {
+/* document.getElementById('blurredC').onclick = event => {
     console.log('Blurred button clicked');
     blur.classList.remove('inactive');
     blob.classList.remove('inactive');
     changeCursor(blob, 3000);
     ring.classList.add('inactive');
 };
-
-document.getElementById('ringC').onclick = event => {
+ */
+/* document.getElementById('ringC').onclick = event => {
     console.log('Ring button clicked');
     blur.classList.add('inactive');
     blob.classList.add('inactive');
     changeCursor(ring, 1500);
     ring.classList.remove('inactive');
-}
+} */
 
 
 function changeCursor(cursor, duration){

@@ -24,4 +24,14 @@ document.querySelector('#aboutmeLink').addEventListener('click', (event) => {
 });
 
 
+document.querySelector('#projectsLink').addEventListener('click', (event) => {
+  event.preventDefault();
+  let aboutme = document.querySelector('#projects');
+  window.scroll({
+    top: document.querySelector('#projects').offsetTop - 100, // adjust as needed
+    behavior: 'smooth'
+  });
+});
+
+
 

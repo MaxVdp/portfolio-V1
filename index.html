@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="js/animateText.js"></script>
+    <script defer src="js/cursorHandler.js"></script>
+    <script defer src="js/navbarHandler.js"></script>
+    <script defer src="js/scrollAnimationHandler.js"></script>
     <title>MaxVdp | Portfolio</title>
 </head>
 <body>
     
     <div id="blur"></div>
     <div id="blob"></div>
-    <div id="ring" class="inactive"></div>
+<!--     <div id="ring" class="inactive">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <defs>
+                <linearGradient id="red-yellow">
+                    <stop offset="0%" stop-color="#ff105f"/>
+                    <stop offset="100%" stop-color="#ffad06"/>
+                </linearGradient>
+            </defs>
+            <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+    </div> -->
+    
 
     <nav>
         <a id="aboutmeLink">About me</a>
         <a id="projectsLink">Projects</a>
         <a id="linksLink">Links</a>
     </nav>
-
+<!-- 
     <div class="cursorToggle">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16">
             <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
@@ -34,7 +48,7 @@
             </div>
         </div>
     </div>
-
+ -->
 
     
     <!-- TODO 
@@ -48,22 +62,39 @@
     </section>
 
     <div id="aboutme">
-        <p>
+        <p class="hidden">
             As a software developer, I am <span>passionate</span> about building <span>high-quality software</span> that solves user needs. I am always looking for ways to <span>expand and improve my skills and knowledge</span> so that I can continue to do my job in the best possible way. I am currently studying for a Bachelor's degree in Applied Informatics at UCLL.
         </p>
-        <p>
+        <p class="hidden">
             I have experience with a <span>variety of programming languages and technologies</span>, including <span>Java</span>, <span>Python</span>, <span>JavaScript</span>, <span>HTML</span>, <span>CSS</span>, <span>Gleam</span> and <span>SQL</span>. I have also used frameworks and libraries such as <span>React</span>, <span>Node.js</span>, and <span>Express</span> for school projects.
         </p>
-        <p>
+        <p class="hidden">
             When I am not studying or working on personal projects, you can find me doing <span>calisthenics</span>, <span>bouldering</span>, <span>playing the guitar</span>, or <span>running around the table with my dog</span>.
         </p>
     </div>
-    <section>
-        <h2>Projects</h2>
-    </section>
-    <script src="js/animateText.js"></script>
-    <script src="js/cursorHandler.js"></script>
-    <script src="js/navbarHandler.js"></script>
+    <div id="projects">
+        <div class="projectCard hidden">
+            <img src="img/pexels-format-380633-1029757.jpg" alt="">
+            <h2>TracknGrow</h2>
+            <p>An online assesment tool.</p>
+        </div>
+        <div class="projectCard hidden">
+            <img src="img/pexels-format-380633-1029757.jpg" alt="">
+            <h2>Project name</h2>
+            <p>	Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, fuga.</p>
+        </div>
+        <div class="projectCard hidden">
+            <img src="img/pexels-format-380633-1029757.jpg" alt="">
+            <h2>Project name</h2>
+            <p>	Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, fuga.</p>
+        </div>
+        <div class="projectCard hidden">
+            <img src="img/pexels-format-380633-1029757.jpg" alt="">
+            <h2>Project name</h2>
+            <p>	Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, fuga.</p>
+        </div>
+        
+    </div>
 
 </body>
 </html>

@@ -178,26 +178,9 @@ Ring Animation
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  border-radius: 50%;
   animation: ringRotate 10s infinite;
-  background: linear-gradient(
-    to right,
-    var(--red-color),
-    var(--yellow-color));
-  z-index: 1;
-}
-
-#ring::before{
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 82%;
-  width: 82%;
-  border-radius: 50%;
-  background: var(--bg-dark-color);
+  fill: url(#red-yellow);
+  z-index: 4;
 }
 
 @keyframes ringRotate {
@@ -223,7 +206,7 @@ nav{
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  z-index: 4;
+  z-index: 5;
 }
 
 nav > a {
@@ -276,6 +259,8 @@ nav > a::before {
 Content styles
 **************/
 
+
+/** Hero **/
 h1{
   color: var(--text-100-color);
   font-size: 7.5rem;
@@ -289,6 +274,7 @@ h1:hover{
   transform: scale(1.03);
 }
 
+/** About me **/
 #aboutme{
   margin-top: 2rem;
   display: flex;
@@ -312,4 +298,75 @@ h1:hover{
 p{
   position: relative;
 }
+
+.hidden{
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(-100%);
+  transition: 1.5s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/** Projects **/
+
+#projects{
+  position: relative;
+  margin: auto;
+  margin-top:50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  width: 75%;
+}
+
+#projects > *{
+  flex: 1 1 500px;
+
+}
+.projectCard{
+  background-color: #282A2E;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.projectCard > img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.projectCard > h2{
+  margin: 20px 0;
+}
+
+.projectCard > p{
+  font-size: 1.1rem;
+}
+
+.projects:nth-child(2){
+  transition: 0.2s;
+}
+
+.projects:nth-child(3){
+  transition-delay: 0.4s;
+}
+
+.projects:nth-child(4){
+  transition-delay: 0.6s;  
+}
+
+
+
+/**************
+Media Queries
+**************/
 
