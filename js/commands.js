@@ -1,6 +1,6 @@
 var startMsg = [
     
-` 
+`                      
     __  ___                _    __                   __                     __ 
    /  |/  /____ _ _  __   | |  / /____ _ ____   ____/ /___   ____   __  __ / /_
   / /|_/ // __ \`/| |/_/   | | / // __ \`// __ \\ / __  // _ \\ / __ \\ / / / // __/
@@ -9,7 +9,7 @@ var startMsg = [
                                                          /_/          © 2024    
 
 
-<p>Welcome to my terminal portfolio.</p>
+<p>Welcome to the terminal side of my portfolio.</p>
 <p>For a list of available commands, type '<span>help</span>'.</p><br></br>
 `
 ]
@@ -21,8 +21,9 @@ var help = [
     '<span class="outName">socials</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s socials',
     '<span class="outName">history</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View command history',
     '<span class="outName">clear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear the terminal',
-    '<span class="outName">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit the terminal',
-    '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files in current directory<br></br>',
+    '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files in current directory',
+    '<span class="outName">cd</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change to a different directory',
+    '<span class="outName">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit the terminal<br></br>',
 ]
 
 var whois = [
@@ -40,12 +41,19 @@ var whois = [
 
 
 var socials = [
+    'Click on the links below to visit:<br></br>',
     '<span class="outName">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/max-vandeput/" target="_blank">linkedin.com/in/max-vandeput/</a>',
 
     '<span class="outName">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/MaxVdp" target="_blank">github.com/MaxVdp</a>',
 
-    '<span class="outName">cv </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_Nederlands_cv.pdf" target="_blank">Dutch-cv/MaxVdp</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_English_cv.pdf" target="_blank">English-cv/MaxVdp</a><br></br>',
+    '<span class="outName">cv </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_Nederlands_cv.pdf" target="_blank">Dutch-cv/MaxVdp</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_English_cv.pdf" target="_blank">English-cv/MaxVdp</a>',
 
+    '<span class="outName">Email</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="copyEmail();" id="email" href="#" >maxyuji.vandeput@gmail.com</a><br></br>',
+
+]
+
+var copiedMsg = [
+    "Email copied to clipboard.<br></br>",
 ]
     
 
@@ -55,4 +63,9 @@ var projects = [
 
 var notFound = [
     "Command not found. Type 'help' for a list of available commands.<br></br>",
+]
+
+var ls = [
+    "Applications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Documents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads",
+    "Music&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pictures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos",
 ]

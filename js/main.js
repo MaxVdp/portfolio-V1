@@ -114,9 +114,10 @@ function command(cmd){
             break;
         case 'exit':
             break;
-        //Optional command
-        // case 'ls':
-        //     break;
+        case 'ls':
+            printLine("ls");
+            printOutput(ls);
+            break;
         default:
             printLine(cmd.toLowerCase());
             printOutput(notFound);
@@ -155,7 +156,19 @@ function printOutput(cmd){
     terminal.appendChild(div);
 }
 
+function copyEmail(){
+    var email = document.getElementById('email');
+    var range = document.createRange();
+    range.selectNode(email);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    printOutput(copiedMsg);
+}
+
 function clear(){
     var terminal = document.getElementById('terminal');
     terminal.innerHTML = '';
 }
+
