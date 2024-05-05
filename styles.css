@@ -9,10 +9,16 @@
     --error: #D62828;
 }
 
-::selection, ::-moz-selection {
+::selection {
     background-color: var(--glow-color);
     color: #EAE2B7;
 }
+
+::-moz-selection {
+    background-color: var(--glow-color);
+    color: #EAE2B7;
+}
+
 
 body {
     font-family: "Space Mono", monospace;
