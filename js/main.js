@@ -86,7 +86,7 @@ function handleKeydown(textarea, event) {
 }
 
 
-
+//Idea: socials -linkedin will open linked in in new tab instead of socials and then clicking on linkedin
 function command(cmd){
     switch(cmd.toLowerCase()){
         case 'help':
@@ -130,6 +130,7 @@ function printLine(cmd){
     var div = document.createElement('div');
     var p = document.createElement('p');
     p.textContent = 'guest@MX-Shell:~$ ';
+    p.classList.add('prompt');
     var span = document.createElement('span');
     span.textContent = cmd;
     p.appendChild(span);

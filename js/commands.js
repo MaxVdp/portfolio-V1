@@ -10,7 +10,7 @@ var startMsg = [
 
 
 <p>Welcome to the terminal side of my portfolio.</p>
-<p>For a list of available commands, type '<span>help</span>'.</p><br></br>
+<p>For a list of available commands, type <span class="outName">'help'</span>.</p><br></br>
 `
 ]
 
@@ -62,7 +62,7 @@ var projects = [
 ]
 
 var notFound = [
-    "Command not found. Type 'help' for a list of available commands.<br></br>",
+    "<span class='notfound'>Command not found. Type <span class='outName'>'help'</span> for a list of available commands.</span><br></br>",
 ]
 
 var ls = [

@@ -1,12 +1,22 @@
 *, body, html{
     margin: 0;
     padding: 0;
+
+    --terminal-bg: #121212 ;
+    --glow-color: #0097B2;
+    --main-text-color: #EAE2B7;
+    --secn-text-color: #87FF65;
+    --error: #D62828;
+}
+
+::selection, ::-moz-selection {
+    background-color: var(--glow-color);
+    color: #EAE2B7;
 }
 
 body {
     font-family: "Space Mono", monospace;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--terminal-bg);
     padding: 0.5rem 1rem 1rem 1rem;
     overflow-x: hidden; 
     font-size: 1rem;
@@ -16,9 +26,11 @@ body {
     padding-bottom: 4rem;
 }
 
+
+
 #line::before {
     content: "guest@MX-Shell:~$";
-    display: inline-block;  
+    display: inline-block; 
 }
 
 #line:hover{
@@ -40,11 +52,11 @@ textarea{
 
 a{
     text-decoration: none;
-    color: #fff;
+    color: #EAE2B7;
 }
 
 a:hover{
-    background-color: aqua;
+    background-color: var(--glow-color);
 }
 
 #writter {
@@ -59,7 +71,7 @@ a:hover{
     display: inline-block;
     width: 8px;
     height: 16px;
-    background-color: #fff;
+    background-color: #EAE2B7;
     animation: blink 1s steps(1) infinite ;
     transform: translateY(3px) ;
     margin-left: -8px;
@@ -67,4 +79,27 @@ a:hover{
 
 @keyframes blink {
     50% { background-color: transparent; }
+}
+
+
+p, #writter, pre{
+    color: var(--main-text-color);
+}
+
+
+.prompt, #line::before{
+    color: var(--secn-text-color)
+}
+
+.prompt > span {
+    color: var(--main-text-color);
+}
+
+.outName{
+    color: var(--glow-color);
+    text-shadow: 0 0 10px var(--glow-color); 
+}
+
+.notfound{
+    color: var(--error);
 }
