@@ -72,7 +72,7 @@ function handleKeydown(textarea, event) {
                 textarea.value = '';
             }
             break;
-        case 9:
+        case 9: // Tab key
             event.preventDefault();
             var inputValue = input.value.trim();
             for (var i = 0; i < commands.length; i++) {

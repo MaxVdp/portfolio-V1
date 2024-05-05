@@ -19,13 +19,12 @@
     color: #EAE2B7;
 }
 
-
 body {
     font-family: "Space Mono", monospace;
     background-color: var(--terminal-bg);
     padding: 0.5rem 1rem 1rem 1rem;
     overflow-x: hidden; 
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 #line{
@@ -69,22 +68,24 @@ a:hover{
     display: inline-block;
     margin: 0;
     padding: 0;
-    margin-left: -4px;
 }
 
 
 .caret {
     display: inline-block;
-    width: 8px;
-    height: 16px;
     background-color: #EAE2B7;
-    animation: blink 1s steps(1) infinite ;
-    transform: translateY(3px) ;
+    color: #EAE2B7;
+    transform: translateY(0px) ;
     margin-left: -8px;
+    animation: blink 1s linear infinite;
+    position: relative;
+    left: 0px;
 }
 
 @keyframes blink {
-    50% { background-color: transparent; }
+    50% {
+        opacity: 0;
+    }
 }
 
 

@@ -67,5 +67,5 @@ var notFound = [
 
 var ls = [
     "Applications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Documents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads",
-    "Music&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pictures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos",
+    "Music&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pictures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos<br></br>",
 ]
