@@ -2,7 +2,7 @@ let history = [];
 var historyIndex = -1;
 var terminal = document.getElementById('terminal')
 var input = document.getElementById('input');
-var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'projects', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email']; 
+var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email', 'projects', 'projects -trackngrow', 'projects -trackngrow -open', 'projects -mxshell', 'projects -mxshell -open', 'projects -chase', 'projects -chase -open', 'projects -trace', 'projects -trace -open']; 
 
 
 // Print the start message ASCII art
@@ -35,6 +35,11 @@ function typeOut(textarea, event) {
     var writter = document.getElementById('writter');
     writter.textContent = textarea.value;
 
+}
+
+// Run when clicked on the input line 
+function startTyping() {
+    input.focus();
 }
 
 // Handle keydown events
@@ -80,8 +85,6 @@ function handleKeydown(textarea, event) {
 }
 
 // Run the command
-//TODO: Add projects command
-//TODO: And project -[projectName] functionality
 //TODO: Add exit functionality
 //TODO: Thinking about cd/ls functionality (maybe using a dictionary with directories and files?)
 
@@ -94,10 +97,6 @@ function command(cmd){
         case 'whois':
             printLine("whois");
             printOutput(whois);
-            break;
-        case 'projects':
-            printLine("projects");
-            printOutput(projects);
             break;
         case 'history':
             printLine("history");
@@ -119,9 +118,26 @@ function command(cmd){
                     printOutput(socials);
                     break;
                 } else {
-                    opensocial(cmd);
+                    openLink(cmd);
                     break;
                 }
+            } else if(cmd.toLowerCase().startsWith('projects')){
+                if(cmd.toLowerCase().trim() === 'projects'){
+                    printLine("projects");
+                    printOutput(projects);
+                    break;
+                } else {
+                    if (cmd.toLowerCase().includes('-open')) {
+                        openLink(cmd);
+                        break;
+                    }else{
+                        proj = cmd.split(' ')[1].toLowerCase();
+                        printLine("projects " + proj);
+                        printOutput(linkProjToVar(proj));
+                        break;
+                    }
+                    
+                } 
             } else {
                 printLine(cmd.toLowerCase());
                 printOutput(notFound);
@@ -131,8 +147,8 @@ function command(cmd){
     }
 }
 
-// Open social media links
-function opensocial(cmd) {
+// Open social or project link
+function openLink(cmd) {
     var social = cmd.split(' ')[1].toLowerCase();
     var actions = {
         '-linkedin': {
@@ -153,7 +169,15 @@ function opensocial(cmd) {
         },
         '-email': {
             action: copyEmail
-        }
+        },
+        '-trackngrow': {
+            message: "Opening TracknGrow...<br></br>",
+            action: trackngrow
+        },
+        '-mxshell': {
+            message: "Opening MX-Shell...<br></br>",
+            action: mxshell
+        },
     };
 
     var action = actions[social];
@@ -170,6 +194,8 @@ function opensocial(cmd) {
         printOutput(notFound);
     }
 }
+
+
 
 // Copy email to clipboard
 function copyEmail(){

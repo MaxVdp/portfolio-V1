@@ -3,6 +3,24 @@ var github = "https://www.github.com/MaxVdp";
 var cvDutch = "files/MaxVdp_Nederlands_cv.pdf";
 var cvEnglish = "files/MaxVdp_English_cv.pdf";
 var email = "maxyuji.vandeput@gmail.com";
+var trackngrow = "https://trackngrow.eu/";
+var mxshell = "https://github.com/MaxVdp/portfolio";
+
+function linkProjToVar(proj){
+    switch(proj){
+        case "-trackngrow":
+            return tngInfo;
+        case "-chace":
+            return chaceInfo;
+        case "-stace":
+            return staceInfo;
+        case "-mxshell":
+            return mxshellInfo;
+        default:
+            return notFound;
+    }
+}
+
 
 var startMsg = [
     
@@ -64,10 +82,62 @@ var copiedMsg = [
 ]
 
 
-// TODO: Add projects structure (just like help, socials, etc.), "projects -[projectName]" to open project
 var projects = [
-    "Projects are currently being worked on and will be available soon.<br></br>",
+    "Type <span class='outName'>'projects -[projectName]'</span> for more info about the project.<br></br>",
+    
+    '<span class="outName">TracknGrow</span>&nbsp;&nbsp;&nbsp;An online assesment tool made with php',
+    '<span class="outName">Chace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A chat web application made in React.js',
+    '<span class="outName">Stace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A stock tracking web application made in Elixir',
+    '<span class="outName">MXShell</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A terminal portfolio made in HTML, CSS and JavaScript<br></br>',
 ]
+
+var tngInfo = [
+    "Type <span class='outName'>'projects -TracknGrow -open'</span> to see it live.",
+    "Hint: use the arrow up key for less typing.<br></br>",
+
+    '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TracknGrow<br></br>',
+
+    '<span class="outName">Description:</span>&nbsp;TracknGrow is an online assessment system.',
+    'Anyone who wants to be assessed or wants to assess can use TracknGrow.',
+    'TracknGrow mainly focusses on behaviour, talents, skills and competences rather',
+    'than scorable fail or pass assessment activities.',
+    'Pupils, students, or trainees can choose their assessors',
+    'by sending them a TracknGrow-initiated email invitation.<br></br>',
+    
+    'I completed this application in my sixth year at \'Miniemeninstituut\' as part of my internship.',
+    'Collaborating with two other students, we talked with the client, EduShakers,',
+    'to ensure the application\'s user-friendliness.',
+    'Note: TracknGrow has undergone updates since my involvement.<br></br>',
+
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;PHP, HTML, CSS, JavaScript, MySQL',
+    '<span class="outName">See live:</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + trackngrow + '" target="_blank">trackngrow.eu</a><br></br>',
+
+]
+
+var mxshellInfo = [
+    "Type <span class='outName'>'projects -mxshell -open'</span> to see it live.",
+    "Hint: use the arrow up key for less typing.<br></br>",
+
+    '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MX-Shell<br></br>',
+
+    '<span class="outName">Description:</span>&nbsp;MX-Shell is a unique terminal-style portfolio',
+    'that showcases my skills and projects in an interactive command-line interface.',
+    'Inspired by the simplicity and efficiency of Linux terminals,',
+    'MX-Shell provides visitors with a nostalgic yet modern browsing experience.',
+    'Users can navigate through my projects by typing commands like',
+    '"projects -[projectName]" to access detailed information about each project.<br></br>',
+
+    'I developed MX-Shell during my free time in my final year of studies in applied informatics.',
+    'It all started with a simple idea: to build a portfolio that reflects my skills and personality in a unique way.',
+    'Drawing inspiration from traditional terminal interfaces, and some other sites that can be found on my githubs readme,',
+    'MX-Shell offers visitors an interactive and memorable browsing experience.<br></br>',
+    
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;HTML, CSS, JavaScript',
+    '<span class="outName">See live:</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + mxshell + '" target="_blank">github.com/MaxVdp/portfolio</a><br></br>',
+
+]
+
+//TODO: Add chase and stace info
 
 var notFound = [
     "<span class='notfound'>Command not found. Type <span class='outName'>'help'</span> for a list of available commands.</span><br></br>",
