@@ -1,6 +1,11 @@
 let history = [];
 var historyIndex = -1;
+var terminal = document.getElementById('terminal')
+var input = document.getElementById('input');
+var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'projects', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email']; 
 
+
+// Print the start message ASCII art
 window.onload = function() {
     var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
@@ -19,6 +24,7 @@ window.onload = function() {
     terminal.appendChild(div);
 }
 
+// Focus on the input line when a key is pressed
 document.addEventListener('keydown', function(event) {
     var textarea = document.getElementById('input');
     if (document.activeElement !== textarea) {
@@ -27,23 +33,20 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-var terminal = document.getElementById('terminal')
-var input = document.getElementById('input');
-var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'projects', 'socials', 'history']; 
-
 // Run when clicked on the input line 
 function startTyping() {
     var textarea = document.getElementById('input');
     textarea.focus();
 }
 
-
+//type on the terminal
 function typeOut(textarea, event) {
     var writter = document.getElementById('writter');
     writter.textContent = textarea.value;
 
 }
 
+// Handle keydown events
 function handleKeydown(textarea, event) {
     switch(event.keyCode){
         case 13: // Enter key
@@ -86,7 +89,7 @@ function handleKeydown(textarea, event) {
 }
 
 
-//Idea: socials -linkedin will open linked in in new tab instead of socials and then clicking on linkedin
+// Run the command
 function command(cmd){
     switch(cmd.toLowerCase()){
         case 'help':
@@ -100,10 +103,6 @@ function command(cmd){
         case 'projects':
             printLine("projects");
             printOutput(projects);
-            break;
-        case 'socials':
-            printLine("socials");
-            printOutput(socials);
             break;
         case 'history':
             printLine("history");
@@ -119,12 +118,82 @@ function command(cmd){
             printOutput(ls);
             break;
         default:
-            printLine(cmd.toLowerCase());
-            printOutput(notFound);
-            break;
+            if(cmd.toLowerCase().startsWith('socials')){
+                if(cmd.toLowerCase().trim() === 'socials'){
+                    printLine("socials");
+                    printOutput(socials);
+                    break;
+                } else {
+                    opensocial(cmd);
+                    break;
+                }
+            } else {
+                printLine(cmd.toLowerCase());
+                printOutput(notFound);
+                break;
+            }
+            
     }
 }
 
+// Open social media links
+function opensocial(cmd) {
+    var social = cmd.split(' ')[1].toLowerCase();
+    var actions = {
+        '-linkedin': {
+            message: "Opening LinkedIn...<br></br>",
+            action: linkedin
+        },
+        '-github': {
+            message: "Opening GitHub...<br></br>",
+            action: github
+        },
+        '-cvdutch': {
+            message: "Opening Dutch CV...<br></br>",
+            action: cvDutch
+        },
+        '-cvenglish': {
+            message: "Opening English CV...<br></br>",
+            action: cvEnglish
+        },
+        '-email': {
+            action: copyEmail
+        }
+    };
+
+    var action = actions[social];
+    if (action) {
+        printLine(cmd.toLowerCase());
+        action.message && printOutput([action.message]);
+        if (action.action !== copyEmail) {
+            setTimeout(function() { window.open(action.action, '_blank'); }, 1500);
+        } else {
+            copyEmail();
+        }
+    } else {
+        printLine(cmd.toLowerCase());
+        printOutput(notFound);
+    }
+}
+
+// Copy email to clipboard
+function copyEmail(){
+    navigator.clipboard.writeText('maxyuji.vandeput@gmail.com')
+    .then(() => {
+        printOutput(copiedMsg)
+    })
+    .catch(err => {
+        printOutput("Failed to copy email to clipboard.")
+    });
+}
+
+// Clear the terminal
+function clear(){
+    var terminal = document.getElementById('terminal');
+    terminal.innerHTML = '';
+}
+
+// Print the command line (guest@MX-Shell:~$ command)
 function printLine(cmd){
     var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
@@ -139,7 +208,7 @@ function printLine(cmd){
     window.scrollTo(0,document.body.scrollHeight);
 }
 
-
+// Print the output of the command
 function printOutput(cmd){
     var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
@@ -156,20 +225,3 @@ function printOutput(cmd){
     }
     terminal.appendChild(div);
 }
-
-function copyEmail(){
-    var email = document.getElementById('email');
-    var range = document.createRange();
-    range.selectNode(email);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    printOutput(copiedMsg);
-}
-
-function clear(){
-    var terminal = document.getElementById('terminal');
-    terminal.innerHTML = '';
-}
-

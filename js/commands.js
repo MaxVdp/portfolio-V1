@@ -1,3 +1,9 @@
+var linkedin = "https://www.linkedin.com/in/max-vandeput/";
+var github = "https://www.github.com/MaxVdp";
+var cvDutch = "files/MaxVdp_Nederlands_cv.pdf";
+var cvEnglish = "files/MaxVdp_English_cv.pdf";
+var email = "maxyuji.vandeput@gmail.com";
+
 var startMsg = [
     
 `                      
@@ -9,7 +15,7 @@ var startMsg = [
                                                          /_/          © 2024    
 
 
-<p>Welcome to the terminal side of my portfolio.</p>
+<p>Welcome to my terminal portfolio.</p>
 <p>For a list of available commands, type <span class="outName">'help'</span>.</p><br></br>
 `
 ]
@@ -39,23 +45,25 @@ var whois = [
 
 ]
 
-
 var socials = [
-    'Click on the links below to visit:<br></br>',
-    '<span class="outName">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/max-vandeput/" target="_blank">linkedin.com/in/max-vandeput/</a>',
+    'Click on the links below to visit.',
+    "Or type <span class='outName'>'socials -[socialName]'</span>.<br></br>",
+    '<span class="outName">LinkedIn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + linkedin + '" target="_blank">linkedin.com/in/max-vandeput/</a>',
 
-    '<span class="outName">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/MaxVdp" target="_blank">github.com/MaxVdp</a>',
+    '<span class="outName">GitHub</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + github + '" target="_blank">github.com/MaxVdp</a>',
 
-    '<span class="outName">cv </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_Nederlands_cv.pdf" target="_blank">Dutch-cv/MaxVdp</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="files/MaxVdp_English_cv.pdf" target="_blank">English-cv/MaxVdp</a>',
+    '<span class="outName">cvDutch </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + cvDutch + '" target="_blank">Dutch-cv/MaxVdp</a>',    
+    '<span class="outName">cvEnglish </span>&nbsp;&nbsp;&nbsp;<a href="'+ cvEnglish + '" target="_blank">English-cv/MaxVdp</a>',
 
     '<span class="outName">Email</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="copyEmail();" id="email" href="#" >maxyuji.vandeput@gmail.com</a><br></br>',
 
 ]
 
+
 var copiedMsg = [
     "Email copied to clipboard.<br></br>",
 ]
-    
+
 
 var projects = [
     "Projects are currently being worked on and will be available soon.<br></br>",
