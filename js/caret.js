@@ -1,8 +1,7 @@
 var caret = document.getElementById('caret');
-var textarea = document.getElementById('input');
 var writter = document.getElementById('writter');
 
-textarea.addEventListener('keyup', function(){
+input.addEventListener('keyup', function(){
     var caretPos = getCaretPos(this);
     moveCaret(caretPos);
 });

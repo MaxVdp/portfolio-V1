@@ -7,7 +7,6 @@ var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'projects', 'history', '
 
 // Print the start message ASCII art
 window.onload = function() {
-    var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
     div.className = 'outputSection';
     var lines = startMsg[0].split('\n'); // Split the input into lines
@@ -26,18 +25,10 @@ window.onload = function() {
 
 // Focus on the input line when a key is pressed
 document.addEventListener('keydown', function(event) {
-    var textarea = document.getElementById('input');
-    if (document.activeElement !== textarea) {
-        textarea.focus();
+    if (document.activeElement !== input) {
+        input.focus();
     }
 });
-
-
-// Run when clicked on the input line 
-function startTyping() {
-    var textarea = document.getElementById('input');
-    textarea.focus();
-}
 
 //type on the terminal
 function typeOut(textarea, event) {
@@ -189,13 +180,11 @@ function copyEmail(){
 
 // Clear the terminal
 function clear(){
-    var terminal = document.getElementById('terminal');
     terminal.innerHTML = '';
 }
 
 // Print the command line (guest@MX-Shell:~$ command)
 function printLine(cmd){
-    var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
     var p = document.createElement('p');
     p.textContent = 'guest@MX-Shell:~$ ';
@@ -210,7 +199,6 @@ function printLine(cmd){
 
 // Print the output of the command
 function printOutput(cmd){
-    var terminal = document.getElementById('terminal');
     var div = document.createElement('div');
     div.className = 'outputSection';
     for(var i = 0; i < cmd.length; i++){

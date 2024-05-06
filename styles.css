@@ -31,8 +31,6 @@ body {
     padding-bottom: 4rem;
 }
 
-
-
 #line::before {
     content: "guest@MX-Shell:~$";
     display: inline-block; 
@@ -75,7 +73,7 @@ a:hover{
     display: inline-block;
     background-color: #EAE2B7;
     color: #EAE2B7;
-    transform: translateY(0px) ;
+    transform: translateY(0px);
     margin-left: -8px;
     animation: blink 1s linear infinite;
     position: relative;
@@ -89,17 +87,13 @@ a:hover{
 }
 
 
-p, #writter, pre{
+p, #writter, pre, .prompt > span {
     color: var(--main-text-color);
 }
 
 
 .prompt, #line::before{
     color: var(--secn-text-color)
-}
-
-.prompt > span {
-    color: var(--main-text-color);
 }
 
 .outName{

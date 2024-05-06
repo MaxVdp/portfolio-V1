@@ -10,18 +10,13 @@
     <title>MX-Shell</title>
 </head>
 <body>
-    <div id="terminal">
-        
-    </div>
-
-
+    <div id="terminal"></div>
     <div class="textarea-wrapper">
         <textarea tabindex="1" type="text" name="" id="input" oninput="typeOut(this, event); "onkeydown="handleKeydown(this, event);"  autofocus></textarea>
     </div>
-    <div id="line" onclick="startTyping();">
+    <div id="line">
         <span id="writter"></span>
         <span id="caret" class="caret">█</span>
     </div>
-
 </body>
 </html>
