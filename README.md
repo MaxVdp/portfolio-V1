@@ -1,4 +1,4 @@
-# <div align="center">Max's Portfolio - v1</div>
+# <div align="center">[Max's Portfolio - v1](https://maxvdp.github.io/portfolio)</div>
 
 <div align="center"> This is the first iteration of my terminal portfolio built with <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong></div>
 <br>
