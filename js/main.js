@@ -79,8 +79,12 @@ function handleKeydown(textarea, event) {
     typeOut(textarea);
 }
 
-
 // Run the command
+//TODO: Add projects command
+//TODO: And project -[projectName] functionality
+//TODO: Add exit functionality
+//TODO: Thinking about cd/ls functionality (maybe using a dictionary with directories and files?)
+
 function command(cmd){
     switch(cmd.toLowerCase()){
         case 'help':

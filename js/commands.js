@@ -59,12 +59,12 @@ var socials = [
 
 ]
 
-
 var copiedMsg = [
     "Email copied to clipboard.<br></br>",
 ]
 
 
+// TODO: Add projects structure (just like help, socials, etc.), "projects -[projectName]" to open project
 var projects = [
     "Projects are currently being worked on and will be available soon.<br></br>",
 ]
