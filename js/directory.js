@@ -71,8 +71,6 @@ function ls() {
     printOutput(items);
 }
 
-
-//TODO: Implement the cd function, cd .., cd path
 function cd(dirPath) {
     if (dirPath === "..") {
         // Go up one level, unless we're already at the root
@@ -100,6 +98,8 @@ function cd(dirPath) {
         // Check if dirPath is a folder
         if (dirPath in current && current[dirPath].type === "folder") {
             currentDir.push(dirPath);
+        } else {
+            printFile(["cd: '" + dirPath + "': No such directory"]);
         }
     }
     document.getElementById('prompt').innerHTML = 'guest@MX-Shell:<span class="path">' + parseCurrentDir() + '</span>$';
@@ -114,7 +114,7 @@ function parseCurrentDir() {
 }
 
 
-function autoFillCD() {
+function autoFillType(fileType, cmdType) {
     // Navigate to the current directory
     var current = dir;
     for (var i = 0; i < currentDir.length; i++) {
@@ -124,16 +124,17 @@ function autoFillCD() {
     // Collect the names of all items in the current directory
     var items = [];
     for (var item in current) {
-        if (current[item].type === "folder") {
+        if (current[item].type === fileType) {
             items.push(item.toLowerCase());
         }
     }
-  
+    // Get input value minus the command type
+    var inputValue = input.value.replace(cmdType, "");
 
-    var inputValue = input.value.replace("cd ", "");
+    // Check if the input value matches any of the items and change input value to the first match
     for (var i = 0; i < items.length; i++) {
         if (items[i].startsWith(inputValue.toLowerCase())) {
-            input.value = "cd " + items[i];
+            input.value = cmdType + items[i];
             break;
         }
     }   
@@ -150,9 +151,7 @@ function cat(file) {
     } else {
         printFile(["cat: '" + file + "': No such file"]);
     }
-
 }
-
 
 function printFile(file) {
     var div = document.createElement('div');

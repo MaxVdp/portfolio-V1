@@ -79,7 +79,9 @@ function handleKeydown(textarea, event) {
         case 9: // Tab key
             event.preventDefault();
             if (textarea.value.toLowerCase().startsWith('cd ')) { 
-                autoFillCD();
+                autoFillType("folder", "cd ");
+            } else if (textarea.value.toLowerCase().startsWith('cat ')) {
+                autoFillType("file", "cat ");
             } else {
                 var inputValue = input.value.trim();
                 for (var i = 0; i < commands.length; i++) {
