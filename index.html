@@ -8,6 +8,7 @@
     <script defer src="js/main.js"></script>
     <script defer src="js/commands.js"></script>
     <script defer src="js/caret.js"></script>
+    <script defer src="js/directory.js"></script>
     <title>MX-Shell</title>
 </head>
 
@@ -18,7 +19,7 @@
             onkeydown="handleKeydown(this, event);" autofocus></textarea>
     </div>
     <div id="line">
-        <span id="prompt">guest@MX-Shell:~$</span>
+        <span id="prompt"></span>
         <span id="writter"></span>
         <span id="caret" class="caret" onclick="startTyping();">█</span>
     </div>

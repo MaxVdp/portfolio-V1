@@ -166,7 +166,6 @@ var mxshellInfo = [
     
     '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;HTML, CSS, JavaScript',
     '<span class="outName">See live:</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + mxshell + '" target="_blank">github.com/MaxVdp/portfolio</a><br></br>',
-
 ]
 
 var notFound = [
@@ -175,9 +174,4 @@ var notFound = [
 
 var noUrlFound = [
     "<span class='notfound'>No url was found. Type <span class='outName'>'help'</span> for a list of available commands.</span><br></br>",
-]
-
-var ls = [
-    "Applications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Documents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads",
-    "Music&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pictures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos<br></br>",
 ]

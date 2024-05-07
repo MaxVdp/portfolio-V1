@@ -6,7 +6,8 @@ var commands = ['ls', 'exit', 'clear', 'reload', 'help', 'whois', 'history', 'so
 
 
 // Print the start message ASCII art
-window.onload = function() {
+window.onload = function () {
+    document.getElementById('prompt').innerHTML = 'guest@MX-Shell:<span class="path">' + parseCurrentDir() + '</span>$';
     var div = document.createElement('div');
     div.className = 'outputSection';
     var lines = startMsg[0].split('\n'); // Split the input into lines
@@ -56,7 +57,6 @@ function handleKeydown(textarea, event) {
                 history.push(trimmedValue);
                 historyIndex = -1; // Reset the history index
             }
-            console.log(textarea.value)
             textarea.value = '';
             break;
         case 38: // Up arrow key
@@ -89,10 +89,7 @@ function handleKeydown(textarea, event) {
     typeOut(textarea);
 }
 
-// Run the command
-//TODO: Add exit functionality
-//TODO: Thinking about cd/ls functionality (maybe using a dictionary with directories and files?)
-
+//TODO: Add exit functionality -> will send back to UI version of portfolio
 function command(cmd){
     switch(cmd.toLowerCase()){
         case 'help':
@@ -114,7 +111,7 @@ function command(cmd){
             break;
         case 'ls':
             printLine("ls");
-            printOutput(ls);
+            ls();
             break;
         case 'reload':
             location.reload();
@@ -146,6 +143,10 @@ function command(cmd){
                     }
                     
                 } 
+            } else if (cmd.toLowerCase().startsWith('cd')) {
+                printLine(cmd.toLowerCase());
+                cd(cmd);
+                break;
             } else {
                 printLine(cmd.toLowerCase());
                 printOutput(notFound);
@@ -225,9 +226,10 @@ function clear(){
 function printLine(cmd){
     var div = document.createElement('div');
     var p = document.createElement('p');
-    p.textContent = 'guest@MX-Shell:~$ ';
+    p.innerHTML = 'guest@MX-Shell:<span class="path">' + parseCurrentDir() + '</span>$ ';
     p.classList.add('prompt');
     var span = document.createElement('span');
+    span.className = 'nrmlText';
     span.textContent = cmd;
     p.appendChild(span);
     div.appendChild(p);

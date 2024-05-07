@@ -7,6 +7,7 @@
     --main-text-color: #EAE2B7;
     --secn-text-color: #87FF65;
     --error: #D62828;
+    --path: #FFD700;
 }
 
 ::selection {
@@ -92,7 +93,7 @@ a:hover{
 }
 
 
-p, #writter, pre, .prompt > span {
+p, #writter, pre, .nrmlText, .file{
     color: var(--main-text-color);
 }
 
@@ -101,11 +102,15 @@ p, #writter, pre, .prompt > span {
     color: var(--secn-text-color)
 }
 
-.outName{
+.outName, .folder{
     color: var(--glow-color);
     text-shadow: 0 0 10px var(--glow-color); 
 }
 
 .notfound{
     color: var(--error);
+}
+
+.path{
+    color: var(--path);
 }
