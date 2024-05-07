@@ -31,11 +31,14 @@ body {
     padding-bottom: 4rem;
 }
 
-#line::before {
+/* #line::before {
     content: "guest@MX-Shell:~$";
     display: inline-block; 
-}
+} */
 
+#prompt{
+    display: inline-block;
+}
 #line:hover{
     cursor: text;
 }
@@ -47,6 +50,7 @@ body {
 textarea{
     position: absolute;
     left: -10000px;
+    top: 100px;
 }
 
 #terminal > div > p{
@@ -66,6 +70,7 @@ a:hover{
     display: inline-block;
     margin: 0;
     padding: 0;
+    white-space: pre;
 }
 
 
@@ -92,7 +97,7 @@ p, #writter, pre, .prompt > span {
 }
 
 
-.prompt, #line::before{
+.prompt, #line::before, #prompt{
     color: var(--secn-text-color)
 }
 

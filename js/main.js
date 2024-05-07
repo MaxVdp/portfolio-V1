@@ -2,7 +2,7 @@ let history = [];
 var historyIndex = -1;
 var terminal = document.getElementById('terminal')
 var input = document.getElementById('input');
-var commands = ['ls', 'exit', 'clear', 'help', 'whois', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email', 'projects', 'projects -trackngrow', 'projects -trackngrow -open', 'projects -mxshell', 'projects -mxshell -open', 'projects -chase', 'projects -chase -open', 'projects -trace', 'projects -trace -open']; 
+var commands = ['ls', 'exit', 'clear', 'reload', 'help', 'whois', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email', 'projects', 'projects -trackngrow', 'projects -trackngrow -open', 'projects -mxshell', 'projects -mxshell -open', 'projects -chace', 'projects -stace']; 
 
 
 // Print the start message ASCII art
@@ -46,12 +46,14 @@ function startTyping() {
 function handleKeydown(textarea, event) {
     switch(event.keyCode){
         case 13: // Enter key
+            event.preventDefault();
             var trimmedValue = textarea.value.trim();
             if (trimmedValue !== '') {
                 command(trimmedValue);
                 history.push(trimmedValue);
                 historyIndex = -1; // Reset the history index
             }
+            console.log(textarea.value)
             textarea.value = '';
             break;
         case 38: // Up arrow key
@@ -110,6 +112,9 @@ function command(cmd){
         case 'ls':
             printLine("ls");
             printOutput(ls);
+            break;
+        case 'reload':
+            location.reload();
             break;
         default:
             if(cmd.toLowerCase().startsWith('socials')){
