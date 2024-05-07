@@ -45,6 +45,7 @@ var help = [
     '<span class="outName">socials</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s socials',
     '<span class="outName">history</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View command history',
     '<span class="outName">clear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear the terminal',
+    '<span class="outName">Reload</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reload the terminal',
     '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files in current directory',
     '<span class="outName">cd</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change to a different directory',
     '<span class="outName">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit the terminal<br></br>',
@@ -114,6 +115,37 @@ var tngInfo = [
 
 ]
 
+var chaceInfo = [
+    '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chace<br></br>',
+
+    '<span class="outName">Description:</span>&nbsp;Chace is a realtime chat application.',
+    'Users can send, accept and decline friend requests.',
+    'They can also create a chatroom and invite friends to join.<br></br>',
+
+    'I completed this application in my second year at \'UCLL\' as part the course called \'Web Development 3\'.',
+    'Collaborating with one other student, we came up with the idea of Chace.',
+    'The name comes from Chat and Ace -> Chace.',
+    'In this course, we learned to work with React, Express, and other technologies.<br></br>',
+    
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;TypeScript, Next.Js, Tailwind, Express.Js., PostgreSQL<br></br>',
+]
+
+var staceInfo = [
+    '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stace<br></br>',
+
+    '<span class="outName">Description:</span>&nbsp;Stace is a stock tracking web application.',
+    'Users can send, accept and decline friend requests.',
+    'They can also create a chatroom and invite friends to join.<br></br>',
+
+    'I completed this application in my second year at \'UCLL\'',
+    'as part the course called \'Internet Programming Major\'.',
+    'Collaborating with one other student, we came up with the idea of Stace.',
+    'In this course, we learned to write in the functional programming language Elixir,',
+    'and work with the Phoenix web framework. <br></br > ',
+    
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;Elixir, Phoenix, PostgreSQL<br></br>',
+]
+
 var mxshellInfo = [
     "Type <span class='outName'>'projects -mxshell -open'</span> to see it live.",
     "Hint: use the arrow up key for less typing.<br></br>",
@@ -137,10 +169,12 @@ var mxshellInfo = [
 
 ]
 
-//TODO: Add chase and stace info
-
 var notFound = [
     "<span class='notfound'>Command not found. Type <span class='outName'>'help'</span> for a list of available commands.</span><br></br>",
+]
+
+var noUrlFound = [
+    "<span class='notfound'>No url was found. Type <span class='outName'>'help'</span> for a list of available commands.</span><br></br>",
 ]
 
 var ls = [
