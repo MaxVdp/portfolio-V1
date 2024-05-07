@@ -45,7 +45,7 @@ var help = [
     '<span class="outName">socials</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s socials',
     '<span class="outName">history</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View command history',
     '<span class="outName">clear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear the terminal',
-    '<span class="outName">Reload</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reload the terminal',
+    '<span class="outName">reload</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reload the terminal',
     '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files in current directory',
     '<span class="outName">cd</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change to a different directory',
     '<span class="outName">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit the terminal<br></br>',
@@ -89,7 +89,7 @@ var projects = [
     '<span class="outName">TracknGrow</span>&nbsp;&nbsp;&nbsp;An online assesment tool made with php',
     '<span class="outName">Chace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A chat web application made in React.js',
     '<span class="outName">Stace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A stock tracking web application made in Elixir',
-    '<span class="outName">MXShell</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A terminal portfolio made in HTML, CSS and JavaScript<br></br>',
+    '<span class="outName">MXShell</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A terminal portfolio made in HTML, CSS and JavaScript<br></br>',
 ]
 
 var tngInfo = [
