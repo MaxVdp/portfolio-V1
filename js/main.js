@@ -2,7 +2,7 @@ let history = [];
 var historyIndex = -1;
 var terminal = document.getElementById('terminal')
 var input = document.getElementById('input');
-var commands = ['ls', 'exit', 'clear', 'reload', 'help', 'whois', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email', 'projects', 'projects -trackngrow', 'projects -trackngrow -open', 'projects -mxshell', 'projects -mxshell -open', 'projects -chace', 'projects -stace']; 
+var commands = ['ls', 'exit', 'clear', 'reload', 'help', 'help more','whois', 'history', 'socials', 'socials -linkedin', 'socials -github', 'socials -cvdutch', 'socials -cvenglish', 'socials -email', 'projects', 'projects -trackngrow', 'projects -trackngrow -open', 'projects -mxshell', 'projects -mxshell -open', 'projects -chace', 'projects -stace']; 
 
 
 // Print the start message ASCII art
@@ -78,11 +78,15 @@ function handleKeydown(textarea, event) {
             break;
         case 9: // Tab key
             event.preventDefault();
-            var inputValue = input.value.trim();
-            for (var i = 0; i < commands.length; i++) {
-                if (commands[i].startsWith(inputValue)) {
-                    input.value = commands[i];
-                    break;
+            if (textarea.value.toLowerCase().startsWith('cd ')) { 
+                autoFillCD();
+            } else {
+                var inputValue = input.value.trim();
+                for (var i = 0; i < commands.length; i++) {
+                    if (commands[i].startsWith(inputValue)) {
+                        input.value = commands[i];
+                        break;
+                    }
                 }
             }
     }
@@ -95,6 +99,10 @@ function command(cmd){
         case 'help':
             printLine("help");
             printOutput(help);
+            break;
+        case 'help more':
+            printLine("help more");
+            printOutput(helpMore);
             break;
         case 'whois':
             printLine("whois");
@@ -145,7 +153,11 @@ function command(cmd){
                 } 
             } else if (cmd.toLowerCase().startsWith('cd')) {
                 printLine(cmd.toLowerCase());
-                cd(cmd);
+                cd(cmd.split(' ')[1]);
+                break;
+            } else if (cmd.toLowerCase().startsWith('cat')) {
+                printLine(cmd.toLowerCase());
+                cat(cmd.split(' ')[1]);
                 break;
             } else {
                 printLine(cmd.toLowerCase());

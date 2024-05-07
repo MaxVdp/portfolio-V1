@@ -40,15 +40,23 @@ var startMsg = [
 
 var help = [
     '<span class="outName">help</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Obviously, you know what this does',
+    '<span class="outName">help more</span>&nbsp;&nbsp;&nbsp;&nbsp;More commands<br></br>',
     '<span class="outName">whois</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Who is Max Vandeput?',
     '<span class="outName">projects</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s projects',
-    '<span class="outName">socials</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s socials',
+    '<span class="outName">socials</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Max\'s socials<br></br>',
     '<span class="outName">history</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View command history',
     '<span class="outName">clear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear the terminal',
     '<span class="outName">reload</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reload the terminal',
-    '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files in current directory',
-    '<span class="outName">cd</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change to a different directory',
     '<span class="outName">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit the terminal<br></br>',
+]
+
+var helpMore = [
+    '<span class="outName">ls</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View files and directories in current directory<br></br>',
+
+    '<span class="outName">cd [directoryName]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move to directory in current directory',
+    '<span class="outName">cd ..</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go back to previous directory <br></br>',
+
+    '<span class="outName">cat [fileName]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print file content<br></br>',
 ]
 
 var whois = [
