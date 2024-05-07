@@ -27,6 +27,8 @@ window.onload = function() {
 document.addEventListener('keydown', function(event) {
     if (document.activeElement !== input) {
         input.focus();
+        window.scrollTo(0,document.body.scrollHeight);
+
     }
 });
 
@@ -44,6 +46,7 @@ function startTyping() {
 
 // Handle keydown events
 function handleKeydown(textarea, event) {
+    window.scrollTo(0,document.body.scrollHeight);
     switch(event.keyCode){
         case 13: // Enter key
             event.preventDefault();
