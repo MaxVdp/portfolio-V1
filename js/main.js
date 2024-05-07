@@ -95,7 +95,10 @@ function handleKeydown(textarea, event) {
     typeOut(textarea);
 }
 
+//TODO: Make simple UI version of portfolio with button top right "Enter MX-Shell"
 //TODO: Add exit functionality -> will send back to UI version of portfolio
+//TODO: Choose color scheme for MX-Shell
+
 function command(cmd){
     switch(cmd.toLowerCase()){
         case 'help':
