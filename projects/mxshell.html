@@ -6,16 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="js/main.js" ></script>
-    <title>MaxVdp | Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css">
+    <script defer src="../js/main.js" ></script>
+    <title>Projects | MX-Shell</title>
 </head>
 <body theme="light">
-    
-  
     <div id="mainPage">
         <header>
-            <a href="index.html">
+            <a href="../index.html">
                 <svg
                 width="118.1636mm"
                 height="114.2989mm"
@@ -44,9 +44,9 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#timeline">Timeline</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#timeline">Timeline</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -111,100 +111,85 @@
                 </div>
             </div>
         </header>
-        <h1>Hey, I'm Max.</h1>
-        <p>I am currently studying for a Bachelor's degree in Applied Informatics at UCLL. As a software developer, I am passionate about building high-quality software that solves user needs. I am always looking for ways to expand and improve my skills and knowledge so that I can continue to do my job in the best possible way. </p>
+
+        <img  id="heroImg" src="../files/images/mx-shell/mxshell.png" alt="MX Shell screenshot">
+        
+
+        <h1>MX-Shell</h1>
+        <div id="smInfo">
+            <p>
+                <a href="../cli/index.html" target="_blank">Visit MX-Shell <span>&#8599;</span></a>
+            </p>  
+            <p><b>Year Developed:</b> <span>2024</span></p>
+            <p><b>Type of Project:</b> <span>Personal</span></p>
+            <p><b>Tech Stack:</b> <span>HTML, CSS, JavaScript</span></p>
+        </div>
+
+
         <br>
-        <p>I have experience with a variety of programming languages and technologies, including Java, Python, JavaScript, HTML, CSS, Gleam and SQL. I have also used frameworks and libraries such as React, Node.js, and Express for school projects. </p>
-        <br>
-        <p>When I am not studying or working on personal projects, you can find me doing calisthenics, bouldering, playing the guitar, or running around the table with my dog.
+        <p>
+            MX-Shell is a unique terminal-style portfolio that showcases my projects and skills in an interactive command-line interface. It offers users a modern and intuitive experience. Users can navigate through the terminal by typing a variaty of commands.
         </p>
-        <hr id="projects">
-        <h2>Projects</h2>
-        <div  class="projectCard">
-            <img src="files/images/mx-shell/mxshell.png" alt="MX-Shell screenshot">
-            <div class="projectInfo">
-                <h3>MX-Shell</h3>
-                <p>A terminal-style portfolio made with html, css and JavaScript</p>
-                <a href="projects/mxshell.html">Read more <span>&#8594;</span></a>
-            </div>
+        <hr>
+
+        <div id="idea">
+            <h2>The idea</h2>
+            <p> For a long time I was looking for a way to showcase my projects in a unique and interactive way. I wanted to create a portfolio that would stand out from the rest and at the same time be a fun and engaging experience for the user.</p> 
+            <br>
+            <p>After countless attempts at designing traditional portfolios, I decided to take a different approach. I started looking and looking and looking. I really wanted something minimal and efficient, not too flashy, but still modern and engaging. Then I had an idea to create a portfolio that looks like an IDE with h-tags, p-tags and code snippets. I thought it was a great idea, but it just didn't quite feel right.
+            </p> 
+            <br>
+            <p>After even more looking I found a website by <a href="https://term.m4tt72.com/" target="_blank">m4tt72</a>. While not a portfolio, it inspired me to create a portfolio that would mimic the look and feel of a Linux terminal.</p>
+            </p>
         </div>
+        <hr>
+        <div id="makingOf">
+            <h2>The Making Of</h2>
+            <p>When I finally got to the terminal idea, I started to do some more research to see what has already been done. This exploration laid the groundwork for the development of MX-Shell.</p>
+            <br>
+            <p>I decided to keep it simple and just use HTML, CSS and Javascript. Initially, my goal was straightforward: enable users to input commands and display corresponding outputs on screen. As development progressed, I expanded the functionality to include additional commands, implemented autofill functionality, and fine-tune the css to make it look and feel like a terminal.</p>
+            <br>
+            <p>Of course there were some challenges during this project. One of the main ones was the caret movement. Essentially, the text visible to users as they type is represented by a span element, dynamically updated with the content entered into a hidden input field positioned off-screen, which is automatically focused on. The caret displayed, is also a span element. Trying to make this pseudo-caret move just like the real caret in the input field was a real challenge. Initially, I attempted to move the pseudo-caret x-amount of pixels for every left arrow or right arrow press. However this would allow you to move the caret off the screen.</p>
+            <br>
+            <div class="img"><img src="../files/images/mx-shell/caretError.png" alt=""></div>
+            <br>
+            <p>
+                So I had to come up with a different solution. I thought <i>"Wouldn't it be great to be able to get the position of the caret in the input field and then move the fake-caret to that position?"</i>. Well apparently you can, and so I did. I created a function that would get the position of the caret in the input field and then move the fake-caret to that position in the span element. This was a great solution and it worked perfectly.
+            </p>
+            <br>
+            <pre>
+                <code class="language-javascript">
+                    function getCaretPos(element){
+                        var caretPos = 0;
+                        if (typeof element.selectionStart !== "undefined") {
+                            caretPos = element.selectionStart;
+                        }
+                        return caretPos;
+                    }
 
-        <div class="projectCard">
-            <img src="files/images/trackngrow/trackngrow.png" alt="TracknGrow screenshot">
-            <div class="projectInfo">
-                <h3>
-                    TracknGrow 
-                    <span title="TracknGrow has undergone updates since my involvement.">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                          </svg>
-                    </span> 
-                </h3>
-                <p>An online assesment tool made with php, html, css and JavaScript</p>
-                <a href="projects/trackngrow.html">Read more <span>&#8594;</span></a>
-            </div>
+                    function moveCaret(position){
+                        var writterText = writter.textContent;
+                        var part2 = writterText.slice(position, writterText.length);
+                        var width = getWidth(part2);
+                        caret.style.left = "-"+width+"px";
+                    }
+
+                    function getWidth(text){
+                        var span = document.createElement('span');
+                        span.textContent = text;
+                        document.body.appendChild(span);
+                        var info = span.getBoundingClientRect();
+                        document.body.removeChild(span);
+                        return info.width;
+                    }
+                </code>
+            </pre>
         </div>
-
-        <div class="projectCard">
-            <img src="files/images/chace/chace.png" alt="Chace screenshot">
-            <div class="projectInfo">
-                <h3>Chace</h3>
-                <p>A messaging website made with ReactJs, ExpressJs and Tailwind</p>
-                <a href="projects/chace.html">Read more <span>&#8594;</span></a>
-            </div>
-        </div>
-
-        <div class="projectCard">
-            <img src="files/images/stace/stace.png" alt="Stace screenshot">
-            <div class="projectInfo">
-                <h3>Stace</h3>
-                <p>A stock tracking website made with Elixir and Phoenix</p>
-                <a href="projects/stace.html">Read more <span>&#8594;</span></a>
-            </div>
-        </div>
-        <hr id="timeline">
-        <div class="timeLine">
-            <h2>Timeline</h2>
-            <div class="timeLineCard">
-                <div class="bullet"></div>
-                <div class="tlcMainInfo">
-                    <span>2023</span>
-                    <h3>Hackaton - Hack the Waste</h3>
-                    <p>24 hours</p>
-                </div>
-                <p>We were tasked to create within an "interdisciplinary" team a new approach to waste management.</p>
-            </div>
-
-            <div class="timeLineCard">
-                <div class="bullet"></div>
-                <div class="tlcMainInfo">
-                    <span>2021</span>
-                    <h3>Bachelor's Degree Applied Informatics - UCLL</h3>
-                    <p>3.5 years</p>
-                </div>
-                <p>I pursued the knowledge that a Applied Informatics degree had to offer. I learned about networks, databases and a variaty of programming languages.</p>
-            </div>
-        </div>
-        <hr id="contact">
-        <div class="contact">
-            <h2>Contact</h2>
-            <form action="https://formspree.io/f/xbjnblje" method="post">
-
-                <label for="name">Name*</label>
-                <input name="name" type="text" placeholder="" required>
-
-                <label for="email">Email*</label>
-                <input name="email" type="email" placeholder="" required>
-                <!-- HoneyPot input -->
-                <input type="hidden" name="_gotcha" style="display:none !important">
-
-                <label for="message">Message*</label>
-                <textarea name="message" id="" placeholder=""
-                rows="10" cols="" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
+        <hr>
+        <div id="conclusion">
+            <h2>Conclusion</h2>
+            <p>In conclusion, the development of MX-Shell has been a rewarding journey. From concept to execution, each step presented its challenges, from caret movement to UI refinement. Moving forward, I'm committed to refining MX-Shell, incorporating feedback, and exploring new possibilities.</p>
+            <br>
         </div>
 
         <div class="footer">
@@ -234,5 +219,8 @@
 
 
     </div>
+    <!-- Syntax text highlighting -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

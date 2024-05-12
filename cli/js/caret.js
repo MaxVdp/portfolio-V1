@@ -15,21 +15,19 @@ function getCaretPos(element){
     return caretPos;
 }
 
-
 function moveCaret(position){
     var writterText = writter.textContent;
     var part2 = writterText.slice(position, writterText.length);
-    var onScreenCoords = getOnScreenCoords(part2);
-    var width = onScreenCoords.width;
+    var width = getWidth(part2);
     caret.style.left = "-"+width+"px";
 }
 
-function getOnScreenCoords(text){
+function getWidth(text){
     var span = document.createElement('span');
     span.textContent = text;
     document.body.appendChild(span);
-    var coords = span.getBoundingClientRect();
+    var info = span.getBoundingClientRect();
     document.body.removeChild(span);
-    return coords;
+    return info.width;
 }
 

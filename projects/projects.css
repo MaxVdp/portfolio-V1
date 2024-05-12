@@ -1,0 +1,82 @@
+#mainPage p{
+    font-weight: 500;
+}
+
+#heroImg{
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+h1 > span, h1{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+h1 > span > svg{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+h2{
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+
+#smInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+#smInfo > p > a{
+    position: relative;
+    color: var(--global-gray-text-color);
+    text-decoration: none;
+}
+
+#smInfo > p > span{
+    font-weight: 400;
+}
+
+#smInfo > p > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--global-gray-text-color);
+    transition: width .3s;
+}
+
+#smInfo > p > a:hover::after {
+    width: 100%;
+}
+
+
+.img{
+    display: flex;
+    justify-content: center;
+}
+
+.img > img{
+    max-width: 100%;
+}
+
+pre{
+    display: flex;
+    justify-content: center;
+}
+
+pre, code {
+    white-space: pre-wrap;      
+}

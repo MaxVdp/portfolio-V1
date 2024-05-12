@@ -1,116 +1,514 @@
 *, body, html{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 
-    --terminal-bg: #121212 ;
-    --glow-color: #0097B2;
-    --main-text-color: #EAE2B7;
-    --secn-text-color: #87FF65;
-    --error: #D62828;
-    --path: #FFD700;
+
+    --global-gray-text-color: #6C757D;
+    /****************
+    Light mode Colors
+    *****************/
+    --light-bg-color: #F6FAFE;
+    --light-text-color: #020912;
+    --light-primary-color: #3395E6;
+    --light-secondary-color: #BF7FF0;
+    --light-accent-color: #DA4DEA;
+
+    /****************
+     Dark mode Colors
+    *****************/
+    --dark-bg-color: #010509;
+    --dark-text-color: #EDF4FD;
+    --dark-primary-color: #197CCC;
+    --dark-secondary-color: #4F0F80;
+    --dark-accent-color: #A215B2;
+
+
+    /****************
+        Font Family
+    *****************/
+    --font-family: 'Poppins', sans-serif;
 }
 
-::selection {
-    background-color: var(--glow-color);
-    color: #EAE2B7;
+body{
+    font-family: var(--font-family);
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-::-moz-selection {
-    background-color: var(--glow-color);
-    color: #EAE2B7;
+#mainPage{
+    max-width: 40rem;
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
+    position: relative;
 }
 
-body {
-    font-family: "Space Mono", monospace;
-    background-color: var(--terminal-bg);
-    padding: 0.5rem 1rem 1rem 1rem;
-    overflow-x: hidden; 
-    font-size: 1.1rem;
+#mainPage > p{
+    font-weight: 450;
 }
 
-#line{
-    padding-bottom: 4rem;
+header{
+    padding: 3rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* #line::before {
-    content: "guest@MX-Shell:~$";
-    display: inline-block; 
+header > a > svg {
+    width: 60px;
+    height: 60px;
+    fill: url(#lightGradient);
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-size: large;
+}
+
+#settings {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#settings > svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--light-text-color);
+    transition: transform 1s;
+}
+
+#dropdown-wrapper {
+    position: absolute;
+    top: 48px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 70px; 
+    height: 114px; 
+    margin: 1px;
+    background: linear-gradient(120deg, var(--light-primary-color), var(--light-accent-color));
+    border-radius: 10px;
+}
+
+
+#dropdown {
+    position: absolute;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 66px; 
+    height: 110px; 
+    background-color: var(--light-bg-color);
+    border-radius: 8px;
+}
+
+
+/* #settings:hover #dropdown, #settings:hover #dropdown-wrapper {
+    display: flex; 
 } */
 
-#prompt{
-    display: inline-block;
-}
-#line:hover{
-    cursor: text;
-}
-
-.outputSection{
-    margin-left: 2rem;
+.dd-Item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-textarea{
-    position: absolute;
-    left: -10000px;
-    /* top: 100px; */
+.dd-Item svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--light-text-color);
 }
 
-#terminal > div > p{
-    margin: 2px 0 2px 0;
+#theme > svg {
+    width: 30px;
+    height: 30px;
 }
 
-a{
-    text-decoration: none;
-    color: #EAE2B7;
-}
-
-a:hover{
-    background-color: var(--glow-color);
-}
-
-#writter {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    white-space: pre;
+h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 
-.caret {
-    display: inline-block;
-    background-color: #EAE2B7;
-    color: #EAE2B7;
-    transform: translateY(0px);
-    margin-left: -9.5px;
-    animation: blink 1s linear infinite;
+h2{
+    margin-bottom: 1rem;
+}
+
+hr{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/*********
+Projects 
+**********/
+
+.projectCard{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.projectCard > img{
+    width: 20rem;
+    border-radius: 0.5rem;
+    box-shadow: 20px rgba(0, 0, 0, 0.1);
+}
+
+.projectInfo{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projectInfo > h3, .projectInfo > h3 > span{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.projectInfo > h3 > span > svg{
+    width: 18.72px;
+    height: 18.72px;
+    cursor: pointer;
+}
+
+.projectInfo > a{
     position: relative;
-    left: 0px;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-weight: 600;
+    width: fit-content;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
+.projectInfo > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--light-text-color);
+    transition: width .3s;
+}
+
+.projectInfo > a:hover::after {
+    width: 100%;
+}
+
+
+/*********
+Timeline 
+**********/
+
+.timeLineCard{
+    padding: 0 0 3rem 1.5rem;
+    position: relative;
+    border-left: 2px solid var(--light-text-color);
+}
+
+.bullet{
+    position: absolute;
+    top: 8px;
+    left: -5.5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--light-text-color);
+    border-radius: 50%;
+}
+
+.tlcMainInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tlcMainInfo > span{
+    background-color: var(--light-text-color);
+    color: var(--light-bg-color);
+    padding: 3px 7px;
+    border-radius: 0.5rem;
+}
+
+.tlcMainInfo > p{
+    color: var(--global-gray-text-color);
+}
+
+
+.timeLineCard > p{
+    color: var(--global-gray-text-color);
+    margin-top: 0.5rem;
+}
+
+
+
+/*********
+Contact 
+**********/
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact > form > input {
+    font: inherit;
+    padding: 0.5rem;
+    border: 1px solid var(--global-gray-text-color);
+    border-radius: 0.5rem;
+    margin-bottom: 0.7rem;
+    background-color: var(--light-bg-color);
+}
+
+.contact > form > textarea{
+    font: inherit;
+    padding: 0.5rem;
+    border: 1px solid var(--global-gray-text-color);
+    border-radius: 0.5rem;
+    resize: vertical;
+    background-color: var(--light-bg-color);
+    margin-bottom: 0.5rem;
+
+}
+
+.contact > form > button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--dark-text-color);
+    background: linear-gradient(120deg, var(--light-primary-color), var(--light-accent-color));
+    width: 8rem;
+    text-align: center;
+    transition: scale 0.2s;
+    border: none;
+}
+
+.contact > form > button:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+
+
+/*********
+Footer
+**********/
+
+.footer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    font-size: larger;
+}
+.socials > * {
+    color: var(--light-bg-color);
+    text-decoration: none;
+    background: var(--global-gray-text-color);
+    width: 45px;
+    aspect-ratio: 1/1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.socials > * > svg {
+    width: 20px;
+    aspect-ratio: 1/1;
+}
+
+.footer > div:nth-child(2){
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+
+.footer > div > p{
+    color: var(--global-gray-text-color);
+}
+
+.footer > div:nth-child(2) > a{
+    position: relative;
+    color: var(--global-gray-text-color);
+    text-decoration: none;
+}
+
+.footer > div:nth-child(2) > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--global-gray-text-color);
+    transition: width .3s;
+}
+
+.footer > div:nth-child(2) > a:hover::after {
+    width: 100%;
+}
+
+
+
+/************
+Media Queries
+*************/
+
+
+@media screen and (max-width: 700px){
+    #mainPage{
+        margin: 0 3rem;
+    }
+
+    .bullet{
+        left: -6px;
     }
 }
 
+@media screen and (max-width: 600px){
+    #mainPage{
+        margin: 0 3rem;
+    }
 
-p, #writter, pre, .nrmlText, .file{
-    color: var(--main-text-color);
+    .bullet{
+        top: 11px;
+    }
+
+    .projectCard{
+        flex-direction: column;
+        margin-bottom: em;
+    }
+
+    .projectInfo{
+        gap: 0.5rem;
+    }
+
+    .projectInfo > a{
+        margin-top: 0rem;
+    }
+
+
+    .projectCard > img{
+        width: 100%;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (max-width: 500px){
+    #mainPage{
+        margin: 0 2rem;
+    }
+
+    header > a > svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    nav > ul {
+        gap: 1rem;
+    }
+
+    nav > ul > li > a{
+        font-size: medium;
+    }
+}
+
+/**************
+    Dark Mode 
+***************/
+
+body[theme="dark"],
+body[theme="dark"] #mainPage, 
+body[theme="dark"] .contact > form > input, 
+body[theme="dark"] .contact > form > textarea{
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body[theme="dark"] .projectInfo > a,
+body[theme="dark"] nav > ul > li > a{
+    color: var(--dark-text-color);
 }
 
 
-.prompt, #line::before, #prompt{
-    color: var(--secn-text-color)
+body[theme="dark"] .timeLineCard{
+    border-left: 2px solid var(--dark-text-color);
 }
 
-.outName, .folder{
-    color: var(--glow-color);
-    text-shadow: 0 0 10px var(--glow-color); 
+body[theme="dark"] .bullet,
+body[theme="dark"] header > div{
+    background-color: var(--dark-text-color);
 }
 
-.notfound{
-    color: var(--error);
+body[theme="dark"] #settings,
+body[theme="dark"] #dropdown,
+body[theme="dark"] .dd-Item{
+    background-color: var(--dark-bg-color);
 }
 
-.path{
-    color: var(--path);
+body[theme="dark"] .tlcMainInfo > span{
+    background-color: var(--dark-text-color);
+    color: var(--dark-bg-color);
+}
+
+body[theme="dark"] .contact > form > button, 
+body[theme="dark"] #dropdown-wrapper {
+    background: linear-gradient(120deg, var(--dark-primary-color), var(--dark-accent-color));
+}
+
+body[theme="dark"] header > a > svg {
+    fill: url(#darkGradient);
+}
+
+body[theme="dark"] header > div > svg{
+    fill: var(--dark-bg-color);
+}
+body[theme="dark"] #settings > svg,
+body[theme="dark"] .dd-Item svg{
+    fill: var(--dark-text-color);
 }

@@ -1,7 +1,7 @@
 var linkedin = "https://www.linkedin.com/in/max-vandeput/";
 var github = "https://www.github.com/MaxVdp";
-var cvDutch = "files/MaxVdp_Nederlands_cv.pdf";
-var cvEnglish = "files/MaxVdp_English_cv.pdf";
+var cvDutch = "../files/MaxVdp_Nederlands_cv.pdf";
+var cvEnglish = "../files/MaxVdp_English_cv.pdf";
 var email = "maxyuji.vandeput@gmail.com";
 var trackngrow = "https://trackngrow.eu/";
 var mxshell = "https://github.com/MaxVdp/portfolio";
@@ -20,8 +20,6 @@ function linkProjToVar(proj){
             return notFound;
     }
 }
-
-
 var startMsg = [
     
 `                      
@@ -93,11 +91,11 @@ var copiedMsg = [
 
 var projects = [
     "Type <span class='outName'>'projects -[projectName]'</span> for more info about the project.<br></br>",
-    
+
+    '<span class="outName">MXShell</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A terminal portfolio made in HTML, CSS and JavaScript',
     '<span class="outName">TracknGrow</span>&nbsp;&nbsp;&nbsp;An online assesment tool made with php',
     '<span class="outName">Chace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A chat web application made in React.js',
-    '<span class="outName">Stace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A stock tracking web application made in Elixir',
-    '<span class="outName">MXShell</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A terminal portfolio made in HTML, CSS and JavaScript<br></br>',
+    '<span class="outName">Stace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A stock tracking web application made in Elixir<br></br>',
 ]
 
 var tngInfo = [
@@ -126,24 +124,24 @@ var tngInfo = [
 var chaceInfo = [
     '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chace<br></br>',
 
-    '<span class="outName">Description:</span>&nbsp;Chace is a realtime chat application.',
-    'Users can send, accept and decline friend requests.',
+    '<span class="outName">Description:</span>&nbsp;Chace is a real-time chat application.',
+    'Users can send, accept or decline friend requests.',
     'They can also create a chatroom and invite friends to join.<br></br>',
 
-    'I completed this application in my second year at \'UCLL\' as part the course called \'Web Development 3\'.',
+    'I completed this application in my second year at \'UCLL\' as part the course called \'Web Development 4\'.',
     'Collaborating with one other student, we came up with the idea of Chace.',
     'The name comes from Chat and Ace -> Chace.',
     'In this course, we learned to work with React, Express, and other technologies.<br></br>',
     
-    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;TypeScript, Next.Js, Tailwind, Express.Js., PostgreSQL<br></br>',
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;TypeScript, Next.Js, Tailwind, Express.Js, PostgreSQL<br></br>',
 ]
 
 var staceInfo = [
     '<span class="outName">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stace<br></br>',
 
     '<span class="outName">Description:</span>&nbsp;Stace is a stock tracking web application.',
-    'Users can send, accept and decline friend requests.',
-    'They can also create a chatroom and invite friends to join.<br></br>',
+    'Users can search through a list of stocks and add them to their favourites.',
+    'Admins can add, update, or delete stocks.<br></br>',
 
     'I completed this application in my second year at \'UCLL\'',
     'as part the course called \'Internet Programming Major\'.',

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/commands.js"></script>
+    <script defer src="js/caret.js"></script>
+    <script defer src="js/directory.js"></script>
+    <title>MX-Shell</title>
+</head>
+
+<body>
+    <div id="terminal"></div>
+    <div class="textarea-wrapper">
+        <textarea tabindex="1" type="text" name="" id="input" oninput="typeOut(this, event); "
+            onkeydown="handleKeydown(this, event);" autofocus></textarea>
+    </div>
+    <div id="line">
+        <span id="prompt"></span>
+        <span id="writter"></span>
+        <span id="caret" class="caret" onclick="startTyping();">█</span>
+    </div>
+</body>
+
+</html>
