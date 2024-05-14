@@ -25,12 +25,10 @@ themeButton.addEventListener('click', function() {
 
 // CLI
 cliButton.addEventListener('click', function() {
-    // if the user is on the home page, redirect to the CLI page
-    if (window.location.pathname === '/index.html') {
-        window.location.href = 'cli/index.html';
-        return;
+    if(window.location.pathname.includes('projects')){
+        window.location.href = '../cli/index.html'
     }else{
-        window.location.href = '../cli/index.html';
+        window.location.href = 'cli/index.html'
     }
 });
 
