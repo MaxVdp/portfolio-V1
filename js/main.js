@@ -25,7 +25,13 @@ themeButton.addEventListener('click', function() {
 
 // CLI
 cliButton.addEventListener('click', function() {
-    window.location.href = '../cli/index.html';
+    // if the user is on the home page, redirect to the CLI page
+    if (window.location.pathname === '/index.html') {
+        window.location.href = 'cli/index.html';
+        return;
+    }else{
+        window.location.href = '../cli/index.html';
+    }
 });
 
 // Settings icon animation
