@@ -133,7 +133,7 @@ var chaceInfo = [
     'The name comes from Chat and Ace -> Chace.',
     'In this course, we learned to work with React, Express, and other technologies.<br></br>',
     
-    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;TypeScript, Next.Js, Tailwind, Express.Js, PostgreSQL<br></br>',
+    '<span class="outName">Tech Stack:</span>&nbsp;&nbsp;TypeScript, Next.Js, Tailwind, Express.Js, PostgreSQL, Prisma<br></br>',
 ]
 
 var staceInfo = [
