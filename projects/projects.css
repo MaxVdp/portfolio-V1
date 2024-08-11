@@ -4,8 +4,10 @@
 
 #heroImg{
     width: 100%;
+    border-radius: 0.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1{
@@ -43,9 +45,30 @@ h2{
     text-decoration: none;
 }
 
-#smInfo > p > span{
-    font-weight: 400;
+#smInfo > p > span[data-version]{
+    position: relative;
+    cursor: pointer;
 }
+/* 
+#smInfo > p > span[data-version]::after{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; 
+    cursor: pointer;
+    padding: 3px 7px;
+    border-radius: 10px;
+    transition: opacity 0.2s ease-in-out;
+} */
+/* 
+#smInfo > p > span[data-version]:hover::after{
+    content: attr(data-version);
+    opacity: 1; 
+    cursor: pointer;
+} */
 
 #smInfo > p > a::after {
     content: '';
@@ -79,4 +102,9 @@ pre{
 
 pre, code {
     white-space: pre-wrap;      
+}
+
+
+.version-tooltip >  {
+
 }

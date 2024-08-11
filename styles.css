@@ -32,6 +32,7 @@
 }
 
 body{
+    transition: background-color 0.2s, color 0.2s;
     font-family: var(--font-family);
     background-color: var(--light-bg-color);
     color: var(--light-text-color);
@@ -41,15 +42,16 @@ body{
 }
 
 #mainPage{
+    transition: background-color 0.2s, color 0.2s;
     max-width: 40rem;
     background-color: var(--light-bg-color);
     color: var(--light-text-color);
     position: relative;
 }
 
-/* #mainPage > p{
-    font-weight: 450;
-} */
+#mainPage > p{
+    text-wrap: pretty;
+}
 
 header{
     padding: 3rem 0;
@@ -95,6 +97,7 @@ nav > ul > li > a{
 }
 
 #dropdown-wrapper {
+    transition: background 0.2s, color 0.2s;
     position: absolute;
     top: 48px;
     display: none;
@@ -109,6 +112,7 @@ nav > ul > li > a{
 
 
 #dropdown {
+    transition: background-color 0.2s, color 0.2s;
     position: absolute;
     display: none;
     justify-content: space-around;
@@ -170,11 +174,52 @@ Projects
 }
 
 
+
 .projectCard > img{
     width: 20rem;
     border-radius: 0.5rem;
-    box-shadow: 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.card{
+    width: 100% !important;
+    position: relative;
+}
+
+.projectImg{
+    width: 100% !important;
+    display: block;
+}
+
+.content{
+    border-radius: 0.5rem;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+    color: var(--dark-text-color);
+    text-decoration: none;
+}
+
+.content:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.content > h3{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
 
 .projectInfo{
     flex: 1 1;
@@ -413,7 +458,6 @@ Media Queries
 
     .projectCard{
         flex-direction: column;
-        margin-bottom: em;
     }
 
     .projectInfo{
