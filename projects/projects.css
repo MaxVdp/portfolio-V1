@@ -41,7 +41,7 @@ h2{
 
 #smInfo > p > a{
     position: relative;
-    color: var(--global-gray-text-color);
+    color: var(--light-gray-text-color);
     text-decoration: none;
 }
 

@@ -5,11 +5,12 @@
     scroll-behavior: smooth;
 
 
-    --global-gray-text-color: #6C757D;
+    --dark-gray-text-color: #B4B4B4;
+    --light-gray-text-color: #646464;
     /****************
     Light mode Colors
     *****************/
-    --light-bg-color: #F6FAFE;
+    --light-bg-color: #FFFFFF;
     --light-text-color: #020912;
     --light-primary-color: #3395E6;
     --light-secondary-color: #BF7FF0;
@@ -18,7 +19,7 @@
     /****************
      Dark mode Colors
     *****************/
-    --dark-bg-color: #080708;
+    --dark-bg-color: #111111;
     --dark-text-color: #EDF4FD;
     --dark-primary-color: #197CCC;
     --dark-secondary-color: #4F0F80;
@@ -293,13 +294,13 @@ Timeline
 }
 
 .tlcMainInfo > p{
-    color: var(--global-gray-text-color);
+    color: var(--light-gray-text-color);
     font-size: 14px;
 }
 
 
 .timeLineCard > p{
-    color: var(--global-gray-text-color);
+    color: var(--light-gray-text-color);
     margin-top: 0.5rem;
 }
 
@@ -322,7 +323,7 @@ label{
 .contact > form > input {
     font: inherit;
     padding: 0.5rem;
-    border: 1px solid var(--global-gray-text-color);
+    border: 1px solid var(--light-gray-text-color);
     border-radius: 0.5rem;
     margin-bottom: 0.7rem;
     background-color: var(--light-bg-color);
@@ -331,7 +332,7 @@ label{
 .contact > form > textarea{
     font: inherit;
     padding: 0.5rem;
-    border: 1px solid var(--global-gray-text-color);
+    border: 1px solid var(--light-gray-text-color);
     border-radius: 0.5rem;
     resize: vertical;
     background-color: var(--light-bg-color);
@@ -382,7 +383,7 @@ Footer
 .socials > * {
     color: var(--light-bg-color);
     text-decoration: none;
-    background: var(--global-gray-text-color);
+    background: var(--light-gray-text-color);
     width: 45px;
     aspect-ratio: 1/1; 
     display: flex;
@@ -406,12 +407,12 @@ Footer
 
 
 .footer > div > p{
-    color: var(--global-gray-text-color);
+    color: var(--light-gray-text-color);
 }
 
 .footer > div:nth-child(2) > a{
     position: relative;
-    color: var(--global-gray-text-color);
+    color: var(--light-gray-text-color);
     text-decoration: none;
 }
 
@@ -422,7 +423,7 @@ Footer
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--global-gray-text-color);
+    background-color: var(--light-gray-text-color);
     transition: width .3s;
 }
 
@@ -548,4 +549,21 @@ body[theme="dark"] header > div > svg{
 body[theme="dark"] #settings > svg,
 body[theme="dark"] .dd-Item svg{
     fill: var(--dark-text-color);
+}
+
+body[theme="dark"] .tlcMainInfo > p,
+body[theme="dark"] .timeLineCard > p,
+body[theme="dark"] .footer > div > p,
+body[theme="dark"] .footer > div:nth-child(2) > a,
+body[theme="dark"] #smInfo > p > a{
+    color: var(--dark-gray-text-color);
+}
+
+body[theme="dark"] .contact > form > input,
+body[theme="dark"] .contact > form > textarea{
+    border: 1px solid var(--dark-gray-text-color);
+}
+
+body[theme="dark"] .footer > div:nth-child(2) > a::after{
+    background-color: var(--dark-gray-text-color);
 }
