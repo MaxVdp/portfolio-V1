@@ -98,7 +98,6 @@ nav > ul > li > a{
 }
 
 #dropdown-wrapper {
-    transition: background 0.2s, color 0.2s;
     position: absolute;
     top: 48px;
     display: none;
@@ -109,11 +108,11 @@ nav > ul > li > a{
     margin: 1px;
     background: linear-gradient(120deg, var(--light-primary-color), var(--light-accent-color));
     border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
 }
 
 
 #dropdown {
-    transition: background-color 0.2s, color 0.2s;
     position: absolute;
     display: none;
     justify-content: space-around;
@@ -123,6 +122,7 @@ nav > ul > li > a{
     height: 110px; 
     background-color: var(--light-bg-color);
     border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 
